@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { Login } from "./pages/Login";
+// redux imports
 import { Provider } from "react-redux";
 import { store } from "./store";
 
@@ -13,7 +14,6 @@ function App() {
           <Link to="/"> Home </Link>
           <Link to="/login"> Login </Link>
           <Link to="/contact"> Contact </Link>
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

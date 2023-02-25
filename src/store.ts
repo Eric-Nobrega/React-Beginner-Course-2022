@@ -9,9 +9,10 @@ interface UserState {
 }
 
 const initialState = { value: { username: "" } } as UserState;
+
 const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: initialState,
   reducers: {
     login: (state: UserState, action: PayloadAction<UserStateValue>) => {
       state.value = action.payload;
@@ -24,6 +25,11 @@ const userSlice = createSlice({
 });
 
 export const { login, logout } = userSlice.actions;
+/*
+The createSlice() function from the @reduxjs/toolkit library 
+automatically generates a set of action creators based on the 
+reducers that you define in the reducers field.
+*/
 
 export const store = configureStore({
   reducer: {
